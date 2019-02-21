@@ -17,9 +17,14 @@
 # If your project uses WebView with JS, uncomment the following
 # and specify the fully qualified class name to the JavaScript interface
 # class:
-#-keepclassmembers class android.webkit.WebView {
-#   public *;
-#}
+-keepclassmembers class android.webkit.WebView {
+   public *;
+}
+-keep class org.apache.cordova.engine.** { *; }
+
+-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+public *;
+}
 
 #-injars      bin/classes
 #-injars      libs
@@ -51,7 +56,7 @@
 -keepattributes SourceFile,LineNumberTable
 
 # Enable proguard with Cordova
--keep class org.apache.cordova.** { *; }
+-keep public class org.apache.cordova.** { *; }
 -keep public class * extends org.apache.cordova.CordovaPlugin
 
 -keep class com.google.android.gms.dynamite.DynamiteModule$DynamiteLoaderClassLoader { java.lang.ClassLoader sClassLoader; }
