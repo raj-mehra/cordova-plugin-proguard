@@ -124,9 +124,10 @@
 -keepattributes *Annotation*,EnclosingMethod
 -optimizations !class/merging/vertical*,!class/merging/horizontal*,!code/simplification/arithmetic,!field/*,!code/allocation/variable
 
--keep class !gc.cordova.libs.test_r.GCTest {
-    *;
-}
+#-keep class !gc.cordova.libs.test_r.GCTest {
+#    *;
+#}
+
 #
 #-keepclassmembers enum * {
 #    public static **[] values();
